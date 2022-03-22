@@ -16,7 +16,6 @@ public class Punto3 {
             vendido += d[i];
         }
 
-        /*------ categoria A -------*/
         if (vendido > 3000) {
             acumulador1 = 5;
             if (vendido > 5000) {
@@ -28,8 +27,6 @@ public class Punto3 {
         }
         ValorA += acumulador1;
 
-
-        /*------ categoria B -------*/
         if (vendido > 5000) {
             acumulador2 = 7;
             if (vendido > 10000) {
