@@ -16,12 +16,12 @@ public class Punto5 {
         double ComunaMayor=0, PorcentajeComuna;
 
         for (int i = 0; i <= titulos.length - 1; i++) {
-            System.out.print(titulos[i] + "\t");/*mostrar titulo en la pantalla*/
+            System.out.print(titulos[i] + "\t");
         }
         System.out.println("");
         for (int i = 0; i < 5; i++) {
             for (int m = 0; m < 5; m++) {
-                System.out.print(votos[m][i] + "\t      ");/*para mostrar los numeros de los votos en pantalla*/
+                System.out.print(votos[m][i] + "\t      ");
             }
             System.out.println("");
         }
@@ -30,21 +30,19 @@ public class Punto5 {
 
         for (int i = 1; i < 5; i++) {
             for (int m = 0; m < 5; m++) {
-                Total[contador] += votos[i][m];/*acumulador par tener la cantidad total de votos por candidato*/
+                Total[contador] += votos[i][m];
             }
-            TotalVotos += Total[contador];/*acumulador par tener la cantidad total de votos en general*/
+            TotalVotos += Total[contador];
             contador++;
         }
         contador = 0;
-        
-        /*-------- Calcular la comuna con mayor porcentaje de votos*/
-        
+         
         for (int i = 0; i < 5; i++) {
             for (int m = 1; m < 5; m++) {
-                TotalComuna[contador] += votos[m][i];/*acumulador par tener la cantidad total de votos por candidato*/
+                TotalComuna[contador] += votos[m][i];
             }
             PorcentajeComuna = (TotalComuna[contador] * 100) / TotalVotos;
-            if (PorcentajeComuna > ComunaMayor) {/*para calcular el cantidado con mayor porcentaje de votos*/
+            if (PorcentajeComuna > ComunaMayor) {
                 ComunaMayor = PorcentajeComuna;
                 NumComuna = i+1;
             }
@@ -55,15 +53,15 @@ public class Punto5 {
         
         for (int j = 1; j < 5; j++) {
 
-            prt = (Total[contador] * 100) / TotalVotos;/*para calcular el porcentaje de votos*/
+            prt = (Total[contador] * 100) / TotalVotos;
             System.out.printf("El " + titulos[j] + " tiene " + Total[contador] + " votos en total con un porcentaje del %.2f \n", prt);
             
-            if (Total[contador] > MasVotado) {/*para calcular el cantidado con más votos y su cantidad de votos*/
+            if (Total[contador] > MasVotado) {
                 MasVotado = Total[contador];
                 Maxvoto = titulos[j];
             }
             
-            if (prt > MayorPrt) {/*para calcular el cantidado con mayor porcentaje de votos*/
+            if (prt > MayorPrt) {
                 MayorPrt = prt;
                 ganador = titulos[j];
             }
